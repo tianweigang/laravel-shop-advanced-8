@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Monolog\Logger;
 use Yansongda\Pay\Pay;
-
+use Illuminate\Support\Facades\Schema; //add fixed sql
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -55,7 +55,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        Schema::defaultStringLength(191); //add fixed sql
         \Illuminate\Pagination\Paginator::useBootstrap();
     }
 
